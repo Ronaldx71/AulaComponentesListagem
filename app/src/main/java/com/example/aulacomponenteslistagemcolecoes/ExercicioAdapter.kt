@@ -39,20 +39,51 @@ class ComponenteListagem {
             }
 
         }else{
-            println("Configura um adaptador para prosseguir")
+            println("Configure um adaptador para prosseguir")
         }
     }
 
 }
 
-class MeuAdaptador() {
+class MeuAdaptador(
+    lista: List<Paciente>
+) : Adaptador {
+
+    private val listaItens = lista
+    override fun quantidadeItens(): Int {
+        return listaItens.size
+
+    }
+
+    override fun montarLayoutParaItem(posicao: Int): String {
+       /* val nome = listaItens[posicao]
+        return "$posicao) $nome -"*/
+        val paciente = listaItens[posicao]
+        var item = "${paciente.nome} - (${paciente.idade}) \n"
+        item += "------------------"
+        return item
+    }
 }
+
+data class Paciente(
+    val nome: String,
+    val idade: Int
+
+)
 
 fun main() {
 
     //Lista de itens
-    val listaItens = listOf("jamilton", "ana", "maria", "pedro", "joão")
+    //val listaItens = listOf("jamilton", "ana", "maria", "pedro", "joão")
+    val listaItens = listOf(
+        Paciente("Ana", 25),
+        Paciente("Jamilton", 18),
+        Paciente("Maria", 45),
+        Paciente("Pedro", 28)
+    )
 
     val componenteListagem = ComponenteListagem()
+    componenteListagem.adaptador = MeuAdaptador( listaItens )
+    componenteListagem.executar()
 
 }
