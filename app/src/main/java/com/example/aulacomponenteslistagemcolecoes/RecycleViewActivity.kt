@@ -18,7 +18,7 @@ class RecycleViewActivity : AppCompatActivity() {
             Mensagem("Ronaldo", "Olá, tudo bem?", "10:45"),
             Mensagem("Ana", "Te vi ontem", "00:45"),
             Mensagem("Maria", "Não acredito", "6:03"),
-            Mensagem("Pedro", "Futebol hoje?", "15:32"),
+            Mensagem("Pedro", "Futebol hoje?", "15:33"),
 
         )
 

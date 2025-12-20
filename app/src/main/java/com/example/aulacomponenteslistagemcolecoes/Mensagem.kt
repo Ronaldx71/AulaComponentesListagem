@@ -5,3 +5,4 @@ data class Mensagem(
     val ultima: String,
     val horaio: String,
 )
+

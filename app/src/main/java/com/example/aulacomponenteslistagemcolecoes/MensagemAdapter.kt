@@ -9,8 +9,8 @@ class MensagemAdapter(
     private val lista: List<Mensagem>
 ) : RecyclerView.Adapter<MensagemAdapter.MensagemViewHolder>() {
 
-    inner class MensagemViewHolder(
-        val itemView: android.view.View
+    class MensagemViewHolder(
+        itemView: android.view.View
     ) : RecyclerView.ViewHolder( itemView ) {
 
         val textNome: TextView = itemView.findViewById(R.id.text_nome)
